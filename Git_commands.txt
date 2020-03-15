@@ -48,6 +48,7 @@ git rebase -i head~[count]
 --> press i to insert comments pick options,
 --> shift zz to write to file and commit
 git reset --soft HEAD~2 && git commit --edit -m"$(git log --format=%B --reverse HEAD..HEAD@{1})"
+Note: HEAD~2 means if two commits are there, like HEAD~3 means three commits
 https://gist.github.com/nicktoumpelis/11214362
 
  git config --local --edit
