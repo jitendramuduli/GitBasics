@@ -1,12 +1,11 @@
 git commands:
- HEAD
 
 Very useful commands
 
 addition
 delete
 experiment 
- expt
+
 For Merge Conflicts:
 		git checkout your_branch
 		git pull origin
