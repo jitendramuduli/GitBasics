@@ -1,6 +1,6 @@
 git commands:
-addition
-delete
+
+Very useful commands
 For Merge Conflicts:
 		git checkout your_branch
 		git pull origin
