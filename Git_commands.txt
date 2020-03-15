@@ -1,0 +1,65 @@
+git commands:
+
+For Merge Conflicts:
+		git checkout your_branch
+		git pull origin
+		git reset --hard origin/your_branch
+		git rebase origin/Pull_request_target_branch
+		-- you get merge conflicts--
+		-- Fix them locally means manually edit files using Visual Studio Code or Eclipse or Notepad++ --
+		git add path_to_updated_file_1 
+		git add path_to_updated_file_2
+		.
+		.
+		.
+		.
+		git add path_to_updated_file_n
+		git rebase --continue
+		git push -f
+
+git reset --hard origin/feature/NAME-OF-BRANCH --> resets local changes  and takes remote branch
+
+git checkout -b feature/NAME-OF-BRANCH-backup
+git checkout feature/NAME-OF-BRANCH
+
+git -c diff.mnemonicprefix=false -c core.quotepath=false fetch origin
+
+git -c diff.mnemonicprefix=false -c core.quotepath=false checkout -b release/Ford_P702_13.0.0 --track origin/release/Ford_P702_13.0.0
+
+Commands:
+Save work and checkout your branch (make sure it’s clean)
+git reset HEAD --hard  (resets any file modifications)
+git submodule deinit –-all (you can also try --force if you run into issues)
+git clean -fx -d (recursively removes untracked fdeiniiles)
+
+Rebase onto 12.0.0 (You can do this in SourceTree as well)
+git rebase origin/release/Ford_P702_12.0.0 (begin rebase)
+git mergetool (Use BC to fix any conflicts – TAKE LOCAL CHANGES TO GET 12.0.0 CONTENT)
+git rebase –continue
+The last two commands need to be repeated for each commit on your branch (squash it first to speed things up!)
+Finally push your changes
+git push --force
+
+To reinitialize your submodules
+submodule update --init –-recursive
+
+interactive rebase 
+git rebase -i head~[count]
+--> press i to insert comments pick options,
+--> shift zz to write to file and commit
+git reset --soft HEAD~2 && git commit --edit -m"$(git log --format=%B --reverse HEAD..HEAD@{1})"
+https://gist.github.com/nicktoumpelis/11214362
+
+ git config --local --edit
+
+-- ref logs --> can track deleted commits
+LDRA
+https://de01-bb01.corp.int/projects/P702SWINT/repos/views_source/pull-requests/950/overview 
+
+
+
+git checkout -b release/Ford_P702_13.1.0
+git push origin -u release/Ford_P702_13.1.0
+
+
+in LAN setting change ipv4 setting to 192.168.0.4
