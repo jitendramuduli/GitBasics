@@ -1,6 +1,7 @@
 git commands:
 addition
 delete
+experiment 
 For Merge Conflicts:
 		git checkout your_branch
 		git pull origin
